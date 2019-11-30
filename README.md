@@ -63,7 +63,7 @@ resolve: {
 },
 ```
 
-* Next we'll replace the module rule for parsing and loading .js and .jsx files to one that includes ts and .tsx files.
+* Finally we'll replace the module rule for parsing and loading .js and .jsx files to one that includes ts and .tsx files.
 
 ```JavaScript
 {
@@ -72,16 +72,6 @@ resolve: {
     use: { loader: 'awesome-typescript-loader',}
 },
 ```
-
-* Finally we'll add an externals configuration.
-
-```JavaScript
-    externals: {
-        "react": "React",
-        "react-dom": "ReactDOM",
-    }
-```
-The externals configuration prevents certain dependencies from being added to the bundle during the build process. In this case we are removing react and react-dom from the output bundles. This should keep the bundle size small.
 
 * After modifying the webpack.config.js file, we can then run `npm run serve` and view our boilerplate in the browser.
 
